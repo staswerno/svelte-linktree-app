@@ -2,4 +2,4 @@
 
 </script>
 
-<h2>photo</h2>
+<h1>photo</h1>
