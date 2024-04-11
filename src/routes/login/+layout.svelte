@@ -4,42 +4,60 @@
     import { cubicOut } from 'svelte/easing';
     import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
 
-    const progress = tweened(0, {
+    let progress = tweened(0, {
 		duration: 400,
         easing: cubicOut
 	});
+
+    let isUsernameRoute = false;
+    let isPhotoRoute = false;
+    let userClicked = false;
+
+    $: {
+        isUsernameRoute = $page.route.id?.includes("username") || false;
+        isPhotoRoute = $page.route.id?.includes("photo") || false;
+
+        if (!userClicked) {
+            // re-initialises tweened so it doesn't animate on reload
+            // better way of doing this?
+            if (isUsernameRoute) {
+            progress = tweened(0.5, {});
+            } else if (isPhotoRoute) {
+            progress = tweened(1, {});
+            }
+        }
+    }
+
 </script>
 
 <nav class="flex justify-center md:block my-6 w-4/6 mx-auto">
     <ul class="flex flex-col md:flex-row justify-around">
         <a 
             href="/login"
-            on:click={() => progress.set(0)}>
+            on:click={() => {userClicked = true; progress.set(0);}}>
                 <button
                     class="btn w-40"
-                    class:btn-primary={$page.route.id?.includes("login")
-                    && !$page.route.id?.includes("username")
-                    && !$page.route.id?.includes("photo")}>
+                    class:btn-primary={!isUsernameRoute && !isPhotoRoute}>
                     sign in
                 </button>
         </a>
         <a
             href="/login/username"
             class="py-3 md:py-0"
-            on:click={() => progress.set(0.5)}>
+            on:click={() => {userClicked = true; progress.set(0.5);}}>
                 <button 
                     class="btn w-40"
-                    class:btn-primary={$page.route.id?.includes("username")}
+                    class:btn-primary={isUsernameRoute}
                     >
                     choose username
                 </button>
         </a>
         <a
             href="/login/photo"
-            on:click={() => progress.set(1)}>
+            on:click={() => {userClicked = true; progress.set(1);}}>
                 <button
                     class="btn w-40"
-                    class:btn-primary={$page.route.id?.includes("photo")}
+                    class:btn-primary={isPhotoRoute}
                     >
                     upload photo
                 </button>
