@@ -27,7 +27,6 @@
             }
         }
     }
-
 </script>
 
 <nav class="flex justify-center md:block my-6 w-4/6 mx-auto">
