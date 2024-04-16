@@ -3,7 +3,7 @@
 // in lib dir for use across multiple pages / limit
 // component complexity
 
-import { auth } from "$lib/firebase";
+import { auth, user } from "$lib/firebase";
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
 async function signInWithGoogle() {
@@ -20,4 +20,10 @@ async function signInWithGoogle() {
 }
 </script>
 
-<button class="btn btn-primary btn-wide" on:click={signInWithGoogle}>sign in with google</button>
+{#if $user}
+  <h2 class="card-title">welcome, {$user.displayName?.toLowerCase()}</h2>
+  <p class="text-center text-secondary font-semibold">you are logged in</p>
+  <button class="btn btn-warning" on:click={() => signOut(auth)}>sign out</button>
+{:else} 
+  <button class="btn btn-primary" on:click={signInWithGoogle}>sign in with google</button>
+{/if}
