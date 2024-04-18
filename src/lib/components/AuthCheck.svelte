@@ -5,8 +5,6 @@
 {#if $user}
   <slot />
 {:else}
-    <p class="text-error">
-        you must be signed in to view this page
-        <a class="btn btn-primary" href="/login">sign in</a>
-    </p>
+    <p class="font-semibold">you must be signed in to view this page</p>
+    <a class="btn w-60" href="/login">sign in</a>
 {/if}

@@ -23,7 +23,7 @@ async function signInWithGoogle() {
 {#if $user}
   <h1 class="card-title">welcome, {$user.displayName?.toLowerCase()}</h1>
   <p class="text-center font-semibold">&gt; you are logged in &lt;</p>
-  <button class="btn btn-warning" on:click={() => signOut(auth)}>sign out</button>
+  <button class="btn w-60" on:click={() => signOut(auth)}>sign out</button>
 {:else} 
-  <button class="btn btn-primary" on:click={signInWithGoogle}>sign in with google</button>
+  <button class="btn w-60" on:click={signInWithGoogle}>sign in with google</button>
 {/if}
