@@ -34,7 +34,7 @@
 </script>
 
 <AuthCheck>
-    <h1 class="card-title">username</h1>
+    <h1 class="card-title">choose a username</h1>
     <form class="w-2/5" on:submit|preventDefault={confirmUsername}>
         <input
           type="text"
@@ -52,7 +52,7 @@
                 @{username} is not available
             {/if}
         {:else}
-            check availability
+            input username to check availability
         {/if}
     </p>
         <!-- make inactive if no input/username unavailable -->
