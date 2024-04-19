@@ -22,14 +22,37 @@
         const exists = await getDoc(ref).then((doc) => doc.exists());
 
         isAvailable = !exists;
+        console.log(isAvailable)
         loading = false;
 
     }, 500);
   }
 
   async function confirmUsername() {
-    // TODO
+    console.log("confirming username", username);
+    const batch = writeBatch(db);
+    batch.set(doc(db, "usernames", username), { uid: $user?.uid });
+    batch.set(doc(db, "users", $user!.uid), { 
+      username, 
+      photoURL: $user?.photoURL ?? null,
+      published: true,
+      bio: 'I am Enya',
+      links: [
+        {
+          title: 'Test Link',
+          url: 'https://enya.com',
+          icon: 'custom'
+        }
+      ]
+    });
+
+    await batch.commit();
+
+    username = '';
+    isAvailable = false;
+
   }
+  
 
 </script>
 
