@@ -62,6 +62,8 @@
 </script>
 
 <AuthCheck>
+
+    {:else}
     <h1 class="card-title">choose a username</h1>
     <form class="w-2/5" on:submit|preventDefault={confirmUsername}>
         <input
@@ -75,25 +77,26 @@
           class:input-success={isAvailable && isValid && !loading}
         />
 
-    <p class="my-3">
-        {#if !isTouched}
-            input username to check availability
-        {:else if !isValid} 
-            <!-- TODO: be more descriptive without breaking layout -->
-            username is invalid
-        {:else if loading}
-            checking availability of @{username}
-        {:else if isTaken}
-            @{username} is not available
-        {:else if isValid}
-           @{username} is available
-        {/if}
-    </p>
-        {#if isAvailable && isValid && !isTaken && !loading}
-            <button class="btn w-60">confirm choice</button>
-        {:else}
-            <!-- TODO: restyle disabled state -->
-            <button class="btn w-60" disabled>confirm choice</button>
-        {/if}
-      </form>
+        <p class="my-3">
+            {#if !isTouched}
+                input username to check availability
+            {:else if !isValid} 
+                <!-- TODO: be more descriptive without breaking layout -->
+                username is invalid
+            {:else if loading}
+                checking availability of @{username}
+            {:else if isTaken}
+                @{username} is not available
+            {:else if isValid}
+            @{username} is available
+            {/if}
+        </p>
+            {#if isAvailable && isValid && !isTaken && !loading}
+                <button class="btn w-60">confirm choice</button>
+            {:else}
+                <!-- TODO: restyle disabled state -->
+                <button class="btn w-60" disabled>confirm choice</button>
+            {/if}
+    </form>
+    {/if}
 </AuthCheck>
