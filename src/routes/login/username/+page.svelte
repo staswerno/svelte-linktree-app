@@ -62,7 +62,12 @@
 </script>
 
 <AuthCheck>
-
+    {#if true}
+        <p class="text-lg">
+        your username is <span class="font-bold underline">alksnvlakn</span>
+      </p>
+      <p class="text-sm mb-3">&gt; usernames cannot be changed &lt;</p>
+      <a class="btn btn-primary" href="/login/photo">upload profile image</a>
     {:else}
     <h1 class="card-title">choose a username</h1>
     <form class="w-2/5" on:submit|preventDefault={confirmUsername}>
@@ -84,11 +89,11 @@
                 <!-- TODO: be more descriptive without breaking layout -->
                 username is invalid
             {:else if loading}
-                checking availability of @{username}
+                checking availability of <span class="font-bold underline">{username}</span>
             {:else if isTaken}
-                @{username} is not available
+                <span class="font-bold underline">{username}</span> is not available
             {:else if isValid}
-            @{username} is available
+                <span class="font-bold underline">{username}</span> is available
             {/if}
         </p>
             {#if isAvailable && isValid && !isTaken && !loading}
