@@ -65,44 +65,44 @@
 <AuthCheck>
     {#if $userData?.username}
         <p class="text-lg">
-        your username is <span class="font-bold underline">{$userData?.username}</span>
-      </p>
-      <p class="text-sm mb-3">&gt; usernames cannot be changed &lt;</p>
-      <a class="btn" href="/login/photo" on:click={() => {userClicked.set(true); progress.set(1);}}>upload profile image</a>
-    {:else}
-    <h1 class="card-title">choose a username</h1>
-    <form class="w-2/5" on:submit|preventDefault={confirmUsername}>
-        <input
-          type="text"
-          placeholder="username"
-          class="input w-full text-base-content"
-          bind:value={username}
-          on:input={checkAvailability}
-          class:input-error={(!isValid && isTouched)}
-          class:input-warning={isTaken}
-          class:input-success={isAvailable && isValid && !loading}
-        />
-
-        <p class="my-3">
-            {#if !isTouched}
-                input username to check availability
-            {:else if !isValid} 
-                <!-- TODO: be more descriptive without breaking layout -->
-                username is invalid
-            {:else if loading}
-                checking availability of <span class="font-bold underline">{username}</span>
-            {:else if isTaken}
-                <span class="font-bold underline">{username}</span> is not available
-            {:else if isValid}
-                <span class="font-bold underline">{username}</span> is available
-            {/if}
+            your username is <span class="font-bold underline">{$userData?.username}</span>
         </p>
-            {#if isAvailable && isValid && !isTaken && !loading}
-                <button class="btn w-60">confirm choice</button>
-            {:else}
-                <!-- TODO: restyle disabled state -->
-                <button class="btn w-60" disabled>confirm choice</button>
-            {/if}
-    </form>
+        <p class="text-sm mb-3">&gt; usernames cannot be changed &lt;</p>
+        <a class="btn" href="/login/photo" on:click={() => {userClicked.set(true); progress.set(1);}}>upload profile image</a>
+    {:else}
+        <h1 class="card-title">choose a username</h1>
+        <form class="w-2/5" on:submit|preventDefault={confirmUsername}>
+            <input
+                type="text"
+                placeholder="username"
+                class="input w-full text-base-content"
+                bind:value={username}
+                on:input={checkAvailability}
+                class:input-error={(!isValid && isTouched)}
+                class:input-warning={isTaken}
+                class:input-success={isAvailable && isValid && !loading}
+                />
+
+            <p class="my-3">
+                {#if !isTouched}
+                    input username to check availability
+                {:else if !isValid} 
+                    <!-- TODO: be more descriptive without breaking layout -->
+                    username is invalid
+                {:else if loading}
+                    checking availability of <span class="font-bold underline">{username}</span>
+                {:else if isTaken}
+                    <span class="font-bold underline">{username}</span> is not available
+                {:else if isValid}
+                    <span class="font-bold underline">{username}</span> is available
+                {/if}
+            </p>
+                {#if isAvailable && isValid && !isTaken && !loading}
+                    <button class="btn w-60">confirm choice</button>
+                {:else}
+                    <!-- TODO: restyle disabled state -->
+                    <button class="btn w-60" disabled>confirm choice</button>
+                {/if}
+        </form>
     {/if}
 </AuthCheck>
