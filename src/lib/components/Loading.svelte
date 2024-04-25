@@ -1,7 +1,6 @@
 <script lang="ts">
-    import { user, userData } from "$lib/firebase";
-    import { onAuthStateChanged } from "firebase/auth";
-
+    import { userData } from "$lib/firebase";
+    let loadingBalls = ['md', 'lg', 'md'];
     let isLoading = true; 
 
     // TODO: fix loading for logged out users
@@ -13,9 +12,11 @@
 </script>
 
 {#if isLoading}
-        <div class="flex h-screen justify-center items-center text-center">
-            <p>loading...</p>
-        </div>
+    <div class="flex h-screen justify-center items-center text-center">
+        {#each loadingBalls as size}
+            <span class={`loading loading-ball loading-${size}`}></span>
+        {/each}
+    </div>
 {:else}
     <slot />
 {/if}
