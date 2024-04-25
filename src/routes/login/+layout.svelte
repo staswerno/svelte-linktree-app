@@ -4,7 +4,7 @@
     import { cubicOut } from 'svelte/easing';
     import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
 
-    let progress = tweened(0, {
+    export let progress = tweened(0, {
 		duration: 400,
         easing: cubicOut
 	});
