@@ -2,6 +2,7 @@
   import AuthCheck from "$lib/components/AuthCheck.svelte";
   import { db, user, userData } from "$lib/firebase";
   import { doc, getDoc, writeBatch} from "firebase/firestore";
+  import { progress, userClicked } from "$lib/stores/progress";
 
   let username = "";
   let loading = false;
@@ -67,7 +68,7 @@
         your username is <span class="font-bold underline">{$userData?.username}</span>
       </p>
       <p class="text-sm mb-3">&gt; usernames cannot be changed &lt;</p>
-      <a class="btn" href="/login/photo">upload profile image</a>
+      <a class="btn" href="/login/photo" on:click={() => {userClicked.set(true); progress.set(1);}}>upload profile image</a>
     {:else}
     <h1 class="card-title">choose a username</h1>
     <form class="w-2/5" on:submit|preventDefault={confirmUsername}>

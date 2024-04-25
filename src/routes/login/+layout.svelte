@@ -1,29 +1,27 @@
 <script lang="ts">
     import { page } from "$app/stores";
-    import { tweened } from 'svelte/motion';
-    import { cubicOut } from 'svelte/easing';
+    import { progress, userClicked } from "$lib/stores/progress";
     import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
-
-    export let progress = tweened(0, {
-		duration: 400,
-        easing: cubicOut
-	});
+    import { user } from "$lib/firebase";
 
     let isUsernameRoute = false;
     let isPhotoRoute = false;
-    let userClicked = false;
 
     $: {
         isUsernameRoute = $page.route.id?.includes("username") || false;
         isPhotoRoute = $page.route.id?.includes("photo") || false;
 
-        if (!userClicked) {
+        if (!$userClicked) {
             // re-initialises tweened so it doesn't animate on reload
             // better way of doing this?
             if (isUsernameRoute) {
-            progress = tweened(0.5, {});
+            progress.set(0.5, {
+                duration: 0
+            });
             } else if (isPhotoRoute) {
-            progress = tweened(1, {});
+            progress.set(1, {
+                duration: 0
+            });
             }
         }
     }
@@ -33,17 +31,17 @@
     <ul class="flex flex-col md:flex-row justify-around">
         <a 
             href="/login"
-            on:click={() => {userClicked = true; progress.set(0);}}>
+            on:click={() => {userClicked.set(true); progress.set(0);}}>
                 <button
                     class="btn w-40"
                     class:btn-primary={!isUsernameRoute && !isPhotoRoute}>
-                    sign in
+                    sign {$user ? "out" : "in"}
                 </button>
         </a>
         <a
             href="/login/username"
             class="py-3 md:py-0"
-            on:click={() => {userClicked = true; progress.set(0.5);}}>
+            on:click={() => {userClicked.set(true); progress.set(0.5);}}>
                 <button 
                     class="btn w-40"
                     class:btn-primary={isUsernameRoute}
@@ -53,7 +51,7 @@
         </a>
         <a
             href="/login/photo"
-            on:click={() => {userClicked = true; progress.set(1);}}>
+            on:click={() => {userClicked.set(true); progress.set(1);}}>
                 <button
                     class="btn w-40"
                     class:btn-primary={isPhotoRoute}
