@@ -3,7 +3,7 @@
 // in lib dir for use across multiple pages / limit
 // component complexity
 
-import { auth, user } from "$lib/firebase";
+import { auth, user, loggedIn } from "$lib/firebase";
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { progress, userClicked } from "$lib/stores/progress"
 
@@ -21,7 +21,7 @@ async function signInWithGoogle() {
 }
 </script>
 
-{#if $user}
+{#if $user && $loggedIn}
   <h1 class="card-title">welcome, {$user.displayName?.toLowerCase()}</h1>
   <p class="text-center mb-3">&gt; you are logged in &lt;</p>
   <a class="btn w-60" href="/login/username" on:click={() => {userClicked.set(true); progress.set(0.5);}}>choose username</a>
