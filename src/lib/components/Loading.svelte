@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { userData } from "$lib/firebase";
+    import { userData, loggedIn } from "$lib/firebase";
     let loadingBalls = ['md', 'lg', 'md'];
     let isLoading = true; 
 
@@ -11,7 +11,7 @@
     }
 </script>
 
-{#if isLoading}
+{#if $loggedIn && isLoading}
     <div class="flex h-screen justify-center items-center text-center">
         {#each loadingBalls as size}
             <span class={`loading loading-ball loading-${size}`}></span>
