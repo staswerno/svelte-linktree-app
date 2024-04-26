@@ -4,7 +4,7 @@
 </script>
 
 {#key $page.url}
-    <div in:fly={{ y: 400, duration: 600 }} >
+    <div in:fly={{ y: 50, duration: 400 }} >
         <slot />
     </div>
 {/key}
