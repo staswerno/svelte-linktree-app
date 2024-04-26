@@ -2,7 +2,7 @@
     import { page } from "$app/stores";
     import { progress, userClicked } from "$lib/stores/progress";
     import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
-    import { user } from "$lib/firebase";
+    import { user, loggedIn } from "$lib/firebase";
 
     let isUsernameRoute = false;
     let isPhotoRoute = false;
@@ -35,7 +35,7 @@
                 <button
                     class="btn w-40"
                     class:btn-primary={!isUsernameRoute && !isPhotoRoute}>
-                    sign {$user ? "out" : "in"}
+                    sign {$user && $loggedIn ? "out" : "in"}
                 </button>
         </a>
         <a
@@ -67,7 +67,7 @@
 </div>
 
 <AnimatedRoute>
-    <main class="card w-4/6 bg-neutral text-neutral-content mx-auto">
+    <main class="card w-4/6 bg-secondary text-primary-content mx-auto">
         <div class="card-body items-center text-center">
             <slot />
         </div>
