@@ -13,7 +13,6 @@
     const file = e.target.files[0];
     previewURL = URL.createObjectURL(file);
     const storageRef = ref(storage, `users/${$user!.uid}/profile.png`);
-    console.log(uploading);
     const result = await uploadBytes(storageRef, file);
     const url = await getDownloadURL(result.ref);
 

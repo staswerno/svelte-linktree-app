@@ -10,14 +10,11 @@ import { progress, userClicked } from "$lib/stores/progress"
 async function signInWithGoogle() {
     const provider = new GoogleAuthProvider();
     const user = await signInWithPopup(auth, provider);
-    console.log(provider)
-    console.log(auth)
     // firebase issues json web token stored client side
     // allowing app to verify that user is logged in.
     // note: doesn't allow you to verify authentication
     // status on the server. if needed, use cookie based
     // authentication (to be implemented later)
-    console.log(user)
 }
 </script>
 
