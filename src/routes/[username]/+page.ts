@@ -20,7 +20,16 @@ export const load = (async ({ params }) => {
     console.log(exists);
     console.log(data);
 
-    
+    if (!exists) {
+        return error(404, "user not found");
+    }
+
+    if (!data.published) {
+        // should this be a return?
+        // or... build catch block?
+        throw error(403, `${data.username}'s profile is private`)
+    }
+
 
     return {
         username: data.username,
