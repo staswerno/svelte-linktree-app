@@ -1,9 +1,12 @@
 <script lang="ts">
-    import { userData, loggedIn } from "$lib/firebase";
+    import { user, userData, loggedIn } from "$lib/firebase";
     let loadingBalls = ['md', 'lg', 'md'];
     let isLoading = true; 
 
     // TODO: fix loading for logged out users
+    // IF the user is logged in 
+    // AND there is no userData 
+    // DON'T use loading component?
     $: {
         if ($userData !== null) {
             isLoading = false;

@@ -40,12 +40,12 @@
       username, 
       photoURL: $user?.photoURL ?? null,
       published: true,
-      bio: 'I am Enya',
+      bio: null,
       links: [
         {
-          title: 'Test Link',
-          url: 'https://enya.com',
-          icon: 'custom'
+          title: null,
+          url: null,
+          icon: null
         }
       ]
     });

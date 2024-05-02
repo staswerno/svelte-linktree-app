@@ -29,6 +29,8 @@
 
 <nav class="flex justify-center md:block my-6 w-4/6 mx-auto">
     <ul class="flex flex-col md:flex-row justify-around">
+        <!-- TODO: should this actually jump to the sign in page
+            AND log someone out when in logged out state? -->
         <a 
             href="/login"
             on:click={() => {userClicked.set(true); progress.set(0);}}>

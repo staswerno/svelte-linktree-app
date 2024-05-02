@@ -10,26 +10,28 @@
     <meta name="description" content={data.bio} />
 </svelte:head>
   
-  
-    <main class="prose text-center mx-auto mt-8">
+  <!-- TODO: improve navigation on this page 
+      EG account/sign out button -->
+  <main class="prose text-center mx-auto mt-8">
 
-    <h1 class="text-7xl text-purple-500">
-      {data.username}
-    </h1>
-  
-    <img
-      src={data.photoURL ?? "/user.png"}
-      alt="photoURL"
-      width="256"
-      class="mx-auto"
-    />
-  
-    <p class="text-xl my-8">{data.bio ?? "no bio yet..."}</p>
-    <ul class="list-none">
-      {#each data.links as item}
-        {@debug item}
-      {/each}
-    </ul>
-  
-  </main>
+  <h1 class="text-6xl text-primary underline mb-6">
+    {data.username}
+  </h1>
+
+  <!-- TODO: this only shows image if username is set. fix. -->
+  <img
+    src={data.photoURL ?? "/user.png"}
+    alt="photoURL"
+    width="256"
+    class="mx-auto"
+  />
+
+  <p class="text-xl my-8">{data.bio ?? "bio coming soon..."}</p>
+  <ul class="list-none">
+    <!-- {#each data.links as item}
+      {@debug item}
+    {/each} -->
+  </ul>
+
+</main>
   

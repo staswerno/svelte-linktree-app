@@ -17,11 +17,13 @@ export const load = (async ({ params }) => {
     const data = snapshot.docs[0]?.data();
 
     if (!exists) {
+        // TODO: add +error page
         return error(404, "user not found");
     }
 
     if (!data.published) {
-        // should this be a return?
+        // TODO: add +error page
+        // TODO: should this be a return?
         // or... build catch block?
         throw error(403, `${data.username}'s profile is private`)
     }
