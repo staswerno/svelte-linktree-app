@@ -51,6 +51,7 @@
                     choose username
                 </button>
         </a>
+        <!-- TODO: disable if no username? -->
         <a
             href="/login/photo"
             on:click={() => {userClicked.set(true); progress.set(1);}}>

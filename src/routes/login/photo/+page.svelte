@@ -53,5 +53,6 @@
         {/if}
         </div>
     </form>
+    <!-- TODO: disable if no username -->
     <a {href} class="btn btn-primary"> finish </a>
 </AuthCheck>
