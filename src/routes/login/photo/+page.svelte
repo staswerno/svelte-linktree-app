@@ -27,6 +27,7 @@
 
     <form class="max-w-screen-md w-full">
       <div class="form-control w-full max-w-xs my-6 mx-auto text-center">
+        <!-- TODO: add user.png to static  -->
         <img
           src={previewURL ?? $userData?.photoURL ?? "/user.png"}
           alt="photoURL"
