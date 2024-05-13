@@ -17,6 +17,7 @@
 {#if $loggedIn && isLoading}
     <div class="flex h-screen justify-center items-center text-center">
         {#each loadingBalls as size}
+            <!-- TODO: why is lg ball sometimes rendering as md? -->
             <span class={`loading loading-ball loading-${size}`}></span>
         {/each}
     </div>

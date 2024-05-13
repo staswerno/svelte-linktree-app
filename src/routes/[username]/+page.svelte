@@ -18,7 +18,7 @@
     {data.username}
   </h1>
 
-  <!-- TODO: this only shows image if username is set. fix. -->
+  <!-- TODO: add defaut user photo -->
   <img
     src={data.photoURL ?? "/user.png"}
     alt="photoURL"
