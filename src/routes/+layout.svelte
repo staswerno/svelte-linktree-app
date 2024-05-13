@@ -3,8 +3,8 @@
   import "../app.css";
 </script>
 
-<Loading>
+<!-- <Loading> -->
   <div class="min-h-screen flex flex-col">
       <slot />
   </div>
-</Loading>
+<!-- </Loading> -->

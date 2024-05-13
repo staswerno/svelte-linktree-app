@@ -53,8 +53,7 @@
         {/if}
         </div>
     </form>
-    <!-- TODO: disable if no username 
-      OR don't allow access to this page until username
-      (disable nav button... and username button? might already be)-->
+    <!-- TODO: disable if no username -->
+    <!-- TODO: add messaging to communicate the above comment -->
     <a {href} class="btn btn-primary"> finish </a>
 </AuthCheck>
