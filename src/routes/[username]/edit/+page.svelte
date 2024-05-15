@@ -12,12 +12,12 @@
     import { writable } from "svelte/store";
   
     const icons = [
-      "Twitter",
-      "YouTube",
-      "TikTok",
-      "LinkedIn",
-      "GitHub",
-      "Custom",
+      "twitter",
+      "youtube",
+      "tiktok",
+      "linkedin",
+      "github",
+      "custom",
     ];
 
     const formDefaults = {
@@ -78,60 +78,61 @@
 
       {#if showForm}
         <form
-          on:submit|preventDefault={addLink}
-          class="bg-base-200 p-6 w-full mx-auto rounded-xl"
+            on:submit|preventDefault={addLink}
+            class="bg-secondary p-6 w-full mx-auto rounded-xl"
         >
-          <select
+            <select
             name="icon"
             class="select select-sm"
             bind:value={$formData.icon}
-          >
+            >
 
             {#each icons as icon}
-              <option value={icon.toLowerCase()}>{icon}</option>
+                <option value={icon.toLowerCase()}>{icon}</option>
             {/each}
-          </select>
-          <input
+            </select>
+            <input
             name="title"
             type="text"
-            placeholder="Title"
+            placeholder="title"
             class="input input-sm"
             bind:value={$formData.title}
-          />
-          <input
+            />
+            <input
             name="url"
             type="text"
             placeholder="URL"
             class="input input-sm"
             bind:value={$formData.url}
-          />
-          <div class="my-4">
+            />
+            <!-- TODO: style this better -->
+            <div class="my-4">
             {#if !titleIsValid}
-              <p class="text-error text-xs">invalid title</p>
+                <p class="text-error text-xs">invalid title</p>
             {/if}
             {#if !urlIsValid}
-              <p class="text-error text-xs">invalid URL</p>
+                <p class="text-error text-xs">invalid URL</p>
             {/if}
             {#if formIsValid}
-              <p class="text-success text-xs">nailed it!</p>
+                <p class="text-success text-xs">nailed it!</p>
             {/if}
-          </div>
-  
-          <button
+            </div>
+            <!-- TODO: center these -->
+            <button
             disabled={!formIsValid}
             type="submit"
             class="btn btn-success block">add a link</button
-          >
-  
-          <button type="button" class="btn btn-xs my-4" on:click={cancelLink}>Cancel</button>
+            >
+
+            <button type="button" class="btn btn-xs my-4" on:click={cancelLink}>cancel</button>
         </form>
-      {:else}
+        {:else}
         <button
-          on:click={() => (showForm = true)}
-          class="btn btn-outline block mx-auto my-4"
+            on:click={() => (showForm = true)}
+            class="btn btn-outline block mx-auto my-4"
         >
-          add a link
+            add a link
         </button>
-      {/if}
+        {/if}
     {/if}
   </main>
