@@ -17,7 +17,7 @@
   <h1 class="text-6xl text-primary underline mb-6">
     {data.username}
   </h1>
-
+  <!-- TODO: remove this comment -->
   <!-- TODO: add defaut user photo -->
   <img
     src={data.photoURL ?? "/user.png"}
