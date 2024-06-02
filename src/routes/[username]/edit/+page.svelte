@@ -106,22 +106,27 @@
             bind:value={$formData.url}
             />
             <!-- TODO: style this better -->
+            <!-- TODO: fix contrast on text -->
             <div class="my-4">
-            {#if !titleIsValid}
-                <p class="text-error text-xs">invalid title</p>
-            {/if}
-            {#if !urlIsValid}
-                <p class="text-error text-xs">invalid URL</p>
+            {#if !titleIsValid || !urlIsValid}
+              <span class="font-bold text-xs">invalid </span>
+              {#if !titleIsValid && !urlIsValid}
+                <span class="font-bold text-xs">title & URL</span>
+              {:else if !titleIsValid}
+                  <span class="font-bold text-xs">title</span>
+              {:else if !urlIsValid}
+                  <span class="font-bold text-xs">URL</span>
+              {/if}
             {/if}
             {#if formIsValid}
-                <p class="text-success text-xs">nailed it!</p>
+                <span class="text-xs">nailed it!</span>
             {/if}
             </div>
             <!-- TODO: center these -->
             <button
             disabled={!formIsValid}
             type="submit"
-            class="btn btn-success block">add a link</button
+            class="btn block">add a link</button
             >
 
             <button type="button" class="btn btn-xs my-4" on:click={cancelLink}>cancel</button>
