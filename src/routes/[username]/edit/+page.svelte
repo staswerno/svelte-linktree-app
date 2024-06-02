@@ -109,17 +109,17 @@
             <!-- TODO: fix contrast on text -->
             <div class="my-4">
             {#if !titleIsValid || !urlIsValid}
-              <span class="font-bold text-xs">invalid </span>
+              <span class="font-bold text-xs text-primary-content">invalid </span>
               {#if !titleIsValid && !urlIsValid}
-                <span class="font-bold text-xs">title & URL</span>
+                <span class="font-bold text-xs text-primary-content">title & URL</span>
               {:else if !titleIsValid}
-                  <span class="font-bold text-xs">title</span>
+                  <span class="font-bold text-xs text-primary-content">title</span>
               {:else if !urlIsValid}
-                  <span class="font-bold text-xs">URL</span>
+                  <span class="font-bold text-xs text-primary-content">URL</span>
               {/if}
             {/if}
             {#if formIsValid}
-                <span class="text-xs">nailed it!</span>
+                <span class="font-bold text-xs text-primary-content">nailed it!</span>
             {/if}
             </div>
             <!-- TODO: center these -->
