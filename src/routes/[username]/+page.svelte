@@ -10,8 +10,7 @@
     <meta name="description" content={data.bio} />
 </svelte:head>
   
-  <!-- TODO: improve navigation on this page 
-      EG account/sign out button -->
+  <!-- TODO: add sign out / edit IF logged in -->
   <main class="prose text-center w-full max-w-xl mx-auto mt-8 items-center">
 
     <h1 class="text-6xl text-primary underline mb-6">
