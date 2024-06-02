@@ -70,6 +70,7 @@
     {:else}
         <h1 class="card-title">choose a username</h1>
         <form class="w-2/5" on:submit|preventDefault={confirmUsername}>
+            <!-- TODO: automatically focus -->
             <input
                 type="text"
                 placeholder="username"
