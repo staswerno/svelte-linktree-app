@@ -79,11 +79,13 @@
       edit your profile
     </h1>
 
+    <!-- TODO: if there are issues, re add
+    let:index
+    slot prop, and uncomment slot on SortableList.svelte -->
     <SortableList 
       list={$userData?.links} 
       on:sort={sortList} 
       let:item 
-      let:index
     >
       <div class="group relative">
         <UserLink {...item} />
@@ -125,7 +127,6 @@
           bind:value={$formData.url}
         />
         <!-- TODO: style this better -->
-        <!-- TODO: fix contrast on text -->
         <div class="my-4">
           {#if !titleIsValid || !urlIsValid}
             <span class="font-bold text-xs text-primary-content">invalid </span>
@@ -141,7 +142,7 @@
             <span class="font-bold text-xs text-primary-content">nailed it!</span>
           {/if}
         </div>
-        <!-- TODO: center these -->
+        <!-- TODO: center these..? -->
         <button
           disabled={!formIsValid}
           type="submit"
