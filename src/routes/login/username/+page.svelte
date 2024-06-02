@@ -43,9 +43,9 @@
       bio: null,
       links: [
         {
-          title: "example link",
-          url: "https://en.wikipedia.org/wiki/Carl_Sagan",
-          icon: "custom"
+            title: "example link",
+            url: "https://en.wikipedia.org/wiki/Carl_Sagan",
+            icon: "custom"
         }
       ]
     });

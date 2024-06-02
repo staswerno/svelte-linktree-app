@@ -9,7 +9,7 @@
 </svelte:head>
 
 <main class="flex w-full min-h-screen">
-
+<!-- TODO: double check formatting on all pages -->
 <div class="hero bg-base-200">
     <div class="hero-content text-center">
     <div class="w-full">
