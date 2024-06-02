@@ -78,6 +78,6 @@
 
 <style>
     .over {
-      @apply border-solid border-neutral rounded-lg ;
+      @apply border-solid border-neutral-content rounded-lg ;
     }
   </style>

@@ -52,9 +52,9 @@
     });
 
     formData.set({
-      icon: "",
+      icon: "custom",
       title: "",
-      url: "",
+      url: "https://",
     });
 
     showForm = false;
@@ -73,7 +73,7 @@
   }
 </script>
 
-<main class="max-w-xl mx-auto">
+<main class="w-full max-w-xl mx-auto">
   {#if $userData?.username == $page.params.username}
     <h1 class="mx-2 text-2xl font-bold mt-8 mb-4 text-center">
       edit your profile
@@ -105,6 +105,7 @@
           class="select select-sm"
           bind:value={$formData.icon}
         >
+          <!-- TODO: icons change order. use keyed each block? -->
           {#each icons as icon}
             <option value={icon.toLowerCase()}>{icon}</option>
           {/each}
