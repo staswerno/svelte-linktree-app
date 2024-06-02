@@ -6,7 +6,7 @@
 
     let isUsernameRoute = false;
     let isPhotoRoute = false;
-
+ 
     $: {
         isUsernameRoute = $page.route.id?.includes("username") || false;
         isPhotoRoute = $page.route.id?.includes("photo") || false;
@@ -31,12 +31,15 @@
     <ul class="flex flex-col md:flex-row justify-around">
         <!-- TODO: should this actually jump to the sign in page
             AND log someone out when in logged out state? -->
+        <!-- TODO: style these buttons? maybe too extra, think on it -->
         <a 
             href="/login"
             on:click={() => {userClicked.set(true); progress.set(0);}}>
                 <button
                     class="btn w-40"
-                    class:btn-primary={!isUsernameRoute && !isPhotoRoute}>
+                    class:btn-primary={!isUsernameRoute && !isPhotoRoute}
+                    class:btn-neutral={isUsernameRoute || isPhotoRoute}
+                    >
                     sign {$user && $loggedIn ? "out" : "in"}
                 </button>
         </a>
@@ -47,6 +50,7 @@
                 <button 
                     class="btn w-40"
                     class:btn-primary={isUsernameRoute}
+                    class:btn-neutral={!isUsernameRoute}
                     >
                     choose username
                 </button>
@@ -57,6 +61,7 @@
                 <button
                     class="btn w-40"
                     class:btn-primary={isPhotoRoute}
+                    class:btn-neutral={!isPhotoRoute}
                     >
                     upload photo
                 </button>

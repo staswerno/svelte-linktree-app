@@ -35,19 +35,19 @@
           class="mx-auto mb-6"
         />
         <label for="photoURL" class="label sr-only">
-          <span class="label-text">pick a file</span>
+          pick a file
         </label>
         <input
           on:change={upload}
           name="photoURL"
           type="file"
           multiple={false}
-          class="file-input file-input-bordered w-full max-w-xs"
+          class="file-input file-input-bordered w-full max-w-xs text-white lowercase"
           accept="image/png, image/jpeg, image/gif, image/webp"
         />
         {#if uploading}
         <div>
-          <p class="mt-6">uploading...</p>
+          <p class="mt-6">꩜ uploading ꩜</p>
           <progress class="progress  w-56 mt-6" />
         </div>
         {/if}
