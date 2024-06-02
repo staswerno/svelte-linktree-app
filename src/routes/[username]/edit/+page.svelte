@@ -98,7 +98,7 @@
     {#if showForm}
       <form
         on:submit|preventDefault={addLink}
-        class="bg-secondary p-6 w-full mx-auto rounded-xl"
+        class="bg-secondary p-6 w-full mx-auto rounded-xl mt-4"
       >
         <select
           name="icon"
