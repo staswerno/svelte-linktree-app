@@ -28,7 +28,7 @@
       body: JSON.stringify({ idToken }),
     });
   }
-  
+
   async function signOutSSR() {
     const res = await fetch("/api/signin", { method: "DELETE" });
     await signOut(auth);
@@ -38,6 +38,7 @@
 {#if $user && $loggedIn}
   <h1 class="card-title">welcome, {$user.displayName?.toLowerCase()}</h1>
   <p class="text-center mb-3">&gt; you are logged in &lt;</p>
+  <!-- TODO: if user has username, photo, links (?) add additional button to direct to edit page -->
   <a class="btn w-60" href="/login/username" on:click={() => {userClicked.set(true); progress.set(0.5);}}>choose username</a>
   <!-- client side sign out below -->
   <!-- <button class="btn w-60" on:click={() => signOut(auth)}>sign out</button> -->
