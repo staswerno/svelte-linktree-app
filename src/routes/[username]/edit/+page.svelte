@@ -73,12 +73,16 @@
   }
 </script>
 
+
+<!-- TODO: add view profile/update bio/sign out button -->
 <main class="w-full max-w-xl mx-auto">
   {#if $userData?.username == $page.params.username}
     <h1 class="mx-2 text-2xl font-bold mt-8 mb-4 text-center">
       edit your profile
     </h1>
-
+    <!-- TODO: add some text that says you can drag and drop to reorder -->
+    <!-- TODO: add change photo button -->
+    <!-- TODO: add profile link - click to copy? -->
     <!-- TODO: if there are issues, re add
     let:index
     slot prop, and uncomment slot on SortableList.svelte -->
@@ -119,6 +123,7 @@
           class="input input-sm"
           bind:value={$formData.title}
         />
+        <!-- TODO: why is input highlighted after text added? -->
         <input
           name="url"
           type="text"

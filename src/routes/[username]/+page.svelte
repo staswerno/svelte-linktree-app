@@ -10,8 +10,7 @@
     <meta name="description" content={data.bio} />
 </svelte:head>
   
-  <!-- TODO: improve navigation on this page 
-      EG account/sign out button -->
+  <!-- TODO: add sign out / edit IF logged in -->
   <main class="prose text-center w-full max-w-xl mx-auto mt-8 items-center">
 
     <h1 class="text-6xl text-primary underline mb-6">
@@ -26,7 +25,7 @@
       class="mx-auto"
     />
 
-    <p class="text-xl my-8">{data.bio ?? "bio coming soon..."}</p>
+    <p class="text-xl my-8">{data.bio}</p>
     <ul class="list-none  p-0 flex flex-col items-center">
       {#each data.links as item}
         <li class="my-2 max-w-md w-full">

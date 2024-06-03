@@ -17,10 +17,11 @@
         <p class="py-6 text-2xl">a shareable home for all your favourite links</p>
         {#if $userData?.username}
             <a href="/{$userData.username}/edit" class="btn btn-primary">edit profile</a>
+            <!-- TODO: add sign out button -->
         {:else}
             <a href="/login" class="btn btn-primary">create profile</a>
-            <!-- TODO: add example profile -->
-            <a href="/fireship" class="btn btn-secondary">example profile</a>
+            <!-- TODO: add example profile - make it fun | set up specific email? -->
+            <a href="/shadowheart" class="btn btn-secondary">example profile</a>
         {/if}
     </div>
     </div>
