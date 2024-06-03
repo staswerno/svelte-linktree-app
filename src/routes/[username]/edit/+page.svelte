@@ -123,6 +123,7 @@
           class="input input-sm"
           bind:value={$formData.title}
         />
+        <!-- TODO: why is input highlighted after text added? -->
         <input
           name="url"
           type="text"

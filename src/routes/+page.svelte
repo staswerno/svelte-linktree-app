@@ -20,8 +20,8 @@
             <!-- TODO: add sign out button -->
         {:else}
             <a href="/login" class="btn btn-primary">create profile</a>
-            <!-- TODO: add example profile - make it fun -->
-            <a href="/fireship" class="btn btn-secondary">example profile</a>
+            <!-- TODO: add example profile - make it fun | set up specific email? -->
+            <a href="/shadowheart" class="btn btn-secondary">example profile</a>
         {/if}
     </div>
     </div>

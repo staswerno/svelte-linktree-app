@@ -25,7 +25,7 @@
       class="mx-auto"
     />
 
-    <p class="text-xl my-8">{data.bio ?? "bio coming soon..."}</p>
+    <p class="text-xl my-8">{data.bio}</p>
     <ul class="list-none  p-0 flex flex-col items-center">
       {#each data.links as item}
         <li class="my-2 max-w-md w-full">

@@ -40,7 +40,7 @@
       username, 
       photoURL: "/user.png",
       published: true,
-      bio: null,
+      bio: "bio coming soon...",
       links: [
         {
             title: "example link",
