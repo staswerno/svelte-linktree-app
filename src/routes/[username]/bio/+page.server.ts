@@ -4,7 +4,6 @@ import { error, redirect } from "@sveltejs/kit";
 
 export const load = (async ({ locals, params }) => {
 	const uid = locals.userID;
-	console.log("bio uid:", uid);
 
 	if (!uid) {
 		throw redirect(302, "/login");
