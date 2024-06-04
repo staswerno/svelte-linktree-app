@@ -11,9 +11,8 @@
 </svelte:head>
   
   <!-- TODO: add sign out / edit IF logged in -->
-  <main class="prose text-center w-full max-w-xl mx-auto mt-8 items-center">
 
-    <h1 class="text-6xl text-primary underline mb-6">
+    <h1 class="text-6xl text-primary underline my-6">
       {data.username}
     </h1>
     <!-- TODO: remove this test comment -->
@@ -32,7 +31,4 @@
           <UserLink {...item} />
         </li>
       {/each}
-    </ul>
-
-</main>
-  
+    </ul>  

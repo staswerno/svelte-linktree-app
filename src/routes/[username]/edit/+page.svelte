@@ -74,18 +74,22 @@
 </script>
 
 
-<!-- TODO: add view profile/update bio/sign out button -->
+<!-- TODO: add sign out button -->
 <main class="w-full max-w-xl mx-auto">
   {#if $userData?.username == $page.params.username}
-    <h1 class="mx-2 text-2xl font-bold mt-8 mb-4 text-center">
+    <h1 class="text-2xl font-bold mt-8 mb-4 text-center">
       edit your profile
     </h1>
+    <p class="border rounded-lg border-dashed mt-8 mb-4 p-4 max-w-64 mx-auto">
+      drag and drop links to reorder
+    </p>
     <!-- TODO: add some text that says you can drag and drop to reorder -->
     <!-- TODO: add change photo button -->
     <!-- TODO: add profile link - click to copy? -->
     <!-- TODO: if there are issues, re add
     let:index
     slot prop, and uncomment slot on SortableList.svelte -->
+    <!-- TODO: add private/public toggle -->
     <SortableList 
       list={$userData?.links} 
       on:sort={sortList} 
