@@ -15,8 +15,6 @@
     <h1 class="text-6xl text-primary underline my-6">
       {data.username}
     </h1>
-    <!-- TODO: remove this test comment -->
-    <!-- TODO: add defaut user photo -->
     <img
       src={data.photoURL ?? "/user.png"}
       alt="photoURL"
@@ -25,7 +23,7 @@
     />
 
     <p class="text-xl my-8">{data.bio}</p>
-    <ul class="list-none  p-0 flex flex-col items-center">
+    <ul class="list-none p-0 flex flex-col items-center mb-12">
       {#each data.links as item}
         <li class="my-2 max-w-md w-full">
           <UserLink {...item} />

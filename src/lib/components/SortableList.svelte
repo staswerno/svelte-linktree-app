@@ -85,7 +85,7 @@
                 animate:flip={{ duration: 300 }}
             >
                 <slot {item}/>
-                <!-- TODO: are we actually using index? 
+                <!-- CLEANUP: are we actually using index? 
                 if there are problems, use below instead of above 
                 also, add back in
                 let:index

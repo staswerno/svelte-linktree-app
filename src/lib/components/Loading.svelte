@@ -16,7 +16,7 @@
 
 {#if $loggedIn && isLoading}
     <div class="flex h-screen justify-center items-center text-center">
-        <!-- TODO: is the key for this each block necessary -->
+        <!-- CLEANUP: is the key for this each block necessary? -->
         {#each loadingBalls as size, i (i)}
             <!-- TODO: why is lg ball sometimes rendering as md? -->
             <span class={`loading loading-ball loading-${size}`}></span>

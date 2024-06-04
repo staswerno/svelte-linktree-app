@@ -9,6 +9,3 @@ export default {
 		themes: ["dracula"],
 	},
 };
-
-// TODO: remove these
-// "dark", "forest", "dracula"

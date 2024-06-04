@@ -22,9 +22,7 @@
             <a 
                 href="/{$userData?.username}"
                 >
-                    <button
-                        class="btn btn-neutral w-20"
-                        >
+                    <button class="btn btn-neutral w-20">
                         view
                     </button>
 

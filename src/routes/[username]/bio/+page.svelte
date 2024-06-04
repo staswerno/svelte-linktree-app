@@ -9,12 +9,12 @@
 <main class="max-w-lg prose text-center mx-auto w-full">
     <h1 class="mx-2 text-2xl font-bold mt-8 mb-4 text-center">edit bio</h1>
 
-    <p class="underline">current bio</p>
-    <p class="my-3"> {data.bio}</p>
+    <p class="font-bold mb-1">current bio</p>
+    <p class="mb-8"> {data.bio}</p>
     <form method="POST" use:enhance>
         <div class="form-control">
-        <label for="bio" class="label">
-            <span class="label-text sr-only">your bio</span>
+        <label for="bio">
+            <span class="sr-only">your bio</span>
         </label>
         <!-- TODO: select all text on selecting textarea -->
         <textarea

@@ -2,7 +2,7 @@
     import { page } from "$app/stores";
     import { progress, userClicked } from "$lib/stores/progress";
     import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
-    import { user, loggedIn } from "$lib/firebase";
+    import { user, userData, loggedIn } from "$lib/firebase";
 
     let isUsernameRoute = false;
     let isPhotoRoute = false;
@@ -29,9 +29,7 @@
 
 <nav class="flex justify-center md:block my-6 w-4/6 mx-auto">
     <ul class="flex flex-col md:flex-row justify-around">
-        <!-- TODO: should this actually jump to the sign in page
-            AND log someone out when in logged out state? -->
-        <!-- TODO: style these buttons? maybe too extra, think on it -->
+        <!-- TODO: add sign out button -->
         <a 
             href="/login"
             on:click={() => {userClicked.set(true); progress.set(0);}}>
@@ -57,11 +55,14 @@
         </a>
         <a
             href="/login/photo"
-            on:click={() => {userClicked.set(true); progress.set(1);}}>
+            on:click={() => {userClicked.set(true); progress.set(1);}}
+            class:pointer-events-none={!$userData?.username}
+            >
                 <button
                     class="btn w-40"
                     class:btn-primary={isPhotoRoute}
                     class:btn-neutral={!isPhotoRoute}
+                    disabled={!$userData?.username}
                     >
                     upload photo
                 </button>

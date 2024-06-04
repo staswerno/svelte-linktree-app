@@ -73,19 +73,25 @@
   }
 </script>
 
-
-<!-- TODO: add sign out button -->
 <main class="w-full max-w-xl mx-auto">
   {#if $userData?.username == $page.params.username}
     <h1 class="text-2xl font-bold mt-8 mb-4 text-center">
-      edit your profile
+      edit profile
     </h1>
-    <p class="border rounded-lg border-dashed mt-8 mb-4 p-4 max-w-64 mx-auto">
+    <div>
+    <!-- TODO: update profile link - click to copy? -->
+      <p class="font-bold mb-1">profile link (click to copy)</p>
+      <p class="mb-8">http://localhost:5173/{$userData?.username}</p>
+    </div>
+    <a
+      href="/login/photo">
+        <button class="btn btn-sm btn-outline mb-4">
+          change photo
+        </button>
+    </a>
+    <p class="border rounded-lg border-dashed my-4 p-4 max-w-64 mx-auto">
       drag and drop links to reorder
-    </p>
-    <!-- TODO: add some text that says you can drag and drop to reorder -->
-    <!-- TODO: add change photo button -->
-    <!-- TODO: add profile link - click to copy? -->
+    </p>    
     <!-- TODO: if there are issues, re add
     let:index
     slot prop, and uncomment slot on SortableList.svelte -->
@@ -151,7 +157,7 @@
             <span class="font-bold text-xs text-primary-content">nailed it!</span>
           {/if}
         </div>
-        <!-- TODO: center these..? -->
+        <!-- TODO: style this better -->
         <button
           disabled={!formIsValid}
           type="submit"

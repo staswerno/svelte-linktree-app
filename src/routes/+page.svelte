@@ -10,6 +10,8 @@
 
 <main class="flex w-full min-h-screen">
 <!-- TODO: double check formatting on all pages -->
+<!-- TODO: double check spacing on all elements -->
+<!-- TODO: remove unused imports -->
 <div class="hero bg-base-200">
     <div class="hero-content text-center">
     <div class="w-full">
@@ -20,7 +22,7 @@
             <!-- TODO: add sign out button -->
         {:else}
             <a href="/login" class="btn btn-primary">create profile</a>
-            <!-- TODO: add example profile - make it fun | set up specific email? -->
+            <!-- TODO: edit example profile - make it fun -->
             <a href="/shadowheart" class="btn btn-secondary">example profile</a>
         {/if}
     </div>

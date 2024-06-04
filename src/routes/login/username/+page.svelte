@@ -74,7 +74,7 @@
             <input
                 type="text"
                 placeholder="username"
-                class="input w-full text-base-content"
+                class="input max-w-96 text-base-content"
                 bind:value={username}
                 on:input={checkAvailability}
                 class:input-error={(!isValid && isTouched)}
@@ -99,7 +99,6 @@
                 {#if isAvailable && isValid && !isTaken && !loading}
                     <button class="btn w-60">confirm choice</button>
                 {:else}
-                    <!-- TODO: restyle disabled state -->
                     <button class="btn w-60" disabled>confirm choice</button>
                 {/if}
         </form>
