@@ -1,8 +1,8 @@
 <script lang="ts">
+    import SignOutButton from "$lib/components/SignOutButton.svelte"
     import { page } from "$app/stores";
     import { progress, userClicked } from "$lib/stores/progress";
-    import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
-    import { user, userData, loggedIn } from "$lib/firebase";
+    import { userData } from "$lib/firebase";
 
     let isEditRoute = false;
     let isBioRoute = false;
@@ -14,10 +14,12 @@
 
 </script>
 
-<main class="text-center w-full max-w-xl mx-auto items-center">
-    {#if isEditRoute || isBioRoute}
-    <!-- TODO: add sign out button -->
-    <nav class="flex justify-center md:block my-6 w-4/6 mx-auto">
+{#if isEditRoute || isBioRoute}
+<!-- TODO: fix sign out button -->
+<!-- TODO: style this navbar :/  -->
+<nav class="flex items-center w-full">
+    <div class="w-6/12 items-start"><p>TODO: DELETE ME</p></div>
+    <div class="shrink-0">
         <ul class="flex flex-col md:flex-row justify-around">
             <a 
                 href="/{$userData?.username}"
@@ -51,7 +53,12 @@
                     </button>
             </a>
         </ul>
-    </nav>
-    {/if}
+    </div>
+    <div class="w-6/12 justify-items-end">
+        <SignOutButton classes={""}/>
+    </div>
+</nav>
+{/if}
+<main class="text-center w-full max-w-xl mx-auto items-center">
     <slot />
 </main>

@@ -53,5 +53,5 @@
         {/if}
         </div>
     </form>
-    <a {href} class="btn btn-primary"> finish </a>
+    <a {href} class="btn btn-primary"> edit profile </a>
 </AuthCheck>
