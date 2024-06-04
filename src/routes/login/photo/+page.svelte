@@ -53,7 +53,5 @@
         {/if}
         </div>
     </form>
-    <!-- TODO: disable if no username -->
-    <!-- TODO: add messaging to communicate the above comment -->
     <a {href} class="btn btn-primary"> finish </a>
 </AuthCheck>

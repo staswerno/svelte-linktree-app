@@ -29,7 +29,6 @@
 
 <nav class="flex justify-center md:block my-6 w-4/6 mx-auto">
     <ul class="flex flex-col md:flex-row justify-around">
-        <!-- TODO: add sign out button -->
         <a 
             href="/login"
             on:click={() => {userClicked.set(true); progress.set(0);}}>
@@ -38,7 +37,7 @@
                     class:btn-primary={!isUsernameRoute && !isPhotoRoute}
                     class:btn-neutral={isUsernameRoute || isPhotoRoute}
                     >
-                    sign {$user && $loggedIn ? "out" : "in"}
+                    {$user && $loggedIn ? "account" : "sign in"}
                 </button>
         </a>
         <a

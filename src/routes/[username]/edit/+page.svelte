@@ -10,6 +10,7 @@
     setDoc,
     updateDoc,
   } from "firebase/firestore";
+  import { progress, userClicked } from "$lib/stores/progress";
   import { writable } from "svelte/store";
 
   const icons = [
@@ -83,9 +84,13 @@
       <p class="font-bold mb-1">profile link (click to copy)</p>
       <p class="mb-8">http://localhost:5173/{$userData?.username}</p>
     </div>
+    <!-- TODO: set progress bar on click -->
     <a
       href="/login/photo">
-        <button class="btn btn-sm btn-outline mb-4">
+        <button 
+        class="btn btn-sm btn-outline mb-4"
+        on:click={() => {userClicked.set(true); progress.set(1);}}
+        >
           change photo
         </button>
     </a>

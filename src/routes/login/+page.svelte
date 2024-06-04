@@ -2,8 +2,8 @@
   // for larger projects, better to define sign in logic
   // in lib dir for use across multiple pages / limit
   // component complexity
-
-  import { auth, user, loggedIn } from "$lib/firebase";
+  import SignOutButton from "$lib/components/SignOutButton.svelte";
+  import { auth, user, userData, loggedIn } from "$lib/firebase";
   import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
   import { progress, userClicked } from "$lib/stores/progress"
 
@@ -38,12 +38,12 @@
 {#if $user && $loggedIn}
   <h1 class="card-title">welcome, {$user.displayName?.toLowerCase()}</h1>
   <p class="text-center mb-3">&gt; you are logged in &lt;</p>
-  <!-- TODO: if user has username, add edit button -->
-  <a class="btn w-60" href="/login/username" on:click={() => {userClicked.set(true); progress.set(0.5);}}>choose username</a>
-  <!-- client side sign out below -->
-  <!-- <button class="btn w-60" on:click={() => signOut(auth)}>sign out</button> -->
-  <!-- SSR sign out below -->
-  <button class="btn w-60" on:click={signOutSSR}>sign out</button>
+  {#if !$userData?.username}
+    <a class="btn w-60" href="/login/username" on:click={() => {userClicked.set(true); progress.set(0.5);}}>choose username</a>
+  {:else}
+    <a class="btn w-60" href="/{$userData.username}/edit">edit profile</a>
+  {/if}
+  <SignOutButton classes={"w-60"}/>
 {:else} 
   <button class="btn w-60" on:click={signInWithGoogle}>sign in with google</button>
 {/if}
