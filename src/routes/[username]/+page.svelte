@@ -1,6 +1,9 @@
 <script lang="ts">
     import UserLink from '$lib/components/UserLink.svelte';
     import type { PageData } from './$types';
+    import { page } from "$app/stores";
+    import { userData } from "$lib/firebase";
+
     
     export let data: PageData;
 </script>
@@ -11,7 +14,9 @@
 </svelte:head>
   
   <!-- TODO: add sign out / edit IF logged in -->
-
+  {#if $userData?.username == $page.params.username}
+    <a class="btn btn-outline btn-sm absolute right-6 top-6" href="/{$userData.username}/edit">back</a>
+  {/if}
     <h1 class="text-6xl text-primary underline my-6">
       {data.username}
     </h1>

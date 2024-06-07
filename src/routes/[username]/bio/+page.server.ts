@@ -1,5 +1,5 @@
 import type { PageServerLoad, Actions } from "./$types";
-import { adminAuth, adminDB } from "$lib/server/admin";
+import { adminDB } from "$lib/server/admin";
 import { error, fail, redirect } from "@sveltejs/kit";
 
 export const load = (async ({ locals, params }) => {
