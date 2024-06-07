@@ -1,10 +1,12 @@
 <script lang="ts">
     import { auth } from "$lib/firebase";
     import { signOut } from "firebase/auth";
+    import { goto } from "$app/navigation";
   
     async function signOutSSR() {
-      const res = await fetch("/api/signin", { method: "DELETE" });
-      await signOut(auth);
+        const res = await fetch("/api/signin", { method: "DELETE" });
+        await signOut(auth);
+        goto("/login");
     }
 
     export let classes: string = "";

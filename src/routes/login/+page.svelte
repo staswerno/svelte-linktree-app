@@ -28,11 +28,6 @@
       body: JSON.stringify({ idToken }),
     });
   }
-
-  async function signOutSSR() {
-    const res = await fetch("/api/signin", { method: "DELETE" });
-    await signOut(auth);
-  }
 </script>
 
 {#if $user && $loggedIn}
