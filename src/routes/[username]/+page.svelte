@@ -13,7 +13,6 @@
     <meta name="description" content={data.bio} />
 </svelte:head>
   
-  <!-- TODO: add sign out / edit IF logged in -->
   {#if $userData?.username == $page.params.username}
     <a class="btn btn-outline btn-sm absolute right-6 top-6" href="/{$userData.username}/edit">back</a>
   {/if}

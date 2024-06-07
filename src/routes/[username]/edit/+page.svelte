@@ -80,11 +80,10 @@
       edit profile
     </h1>
     <div>
-    <!-- TODO: update profile link - click to copy? -->
+    <!-- TODO: click to copy -->
       <p class="font-bold mb-1">profile link (click to copy)</p>
-      <p class="mb-8">http://localhost:5173/{$userData?.username}</p>
+      <p class="mb-8 text-accent">http://localhost:5173/{$userData?.username}</p>
     </div>
-    <!-- TODO: set progress bar on click -->
     <a
       href="/login/photo">
         <button 
@@ -97,7 +96,7 @@
     <p class="border rounded-lg border-dashed my-4 p-4 max-w-64 mx-auto">
       drag and drop links to reorder
     </p>    
-    <!-- TODO: if there are issues, re add
+    <!-- NOTE: if there are issues, re add
     let:index
     slot prop, and uncomment slot on SortableList.svelte -->
     <!-- TODO: add private/public toggle -->
