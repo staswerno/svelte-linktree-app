@@ -19,13 +19,14 @@
         <h1 class="text-7xl font-bold">linktasia</h1>
         <p class="py-6 text-2xl">a shareable home for all your favourite links</p>
         {#if $userData?.username}
-            <a href="/{$userData.username}/edit" class="btn btn-primary">edit profile</a>
+            <a href="/{$userData.username}/edit" class="btn btn-primary mr-3 w-36">edit profile</a>
             <!-- TODO: add sign out button -->
         {:else}
-            <a href="/login" class="btn btn-primary">create profile</a>
-            <!-- TODO: edit example profile - make it fun -->
-            <a href="/shadowheart" class="btn btn-secondary">example profile</a>
+            <a href="/login" class="btn btn-primary mr-3 w-36">create profile</a>
         {/if}
+            <!-- TODO: edit example profile - make it fun -->
+        <a href="/shadowheart" class="btn btn-secondary ml-3 w-36">example profile</a>
+
     </div>
     </div>
 </div>
