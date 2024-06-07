@@ -76,7 +76,7 @@
 
 <main class="w-full max-w-xl mx-auto">
   {#if $userData?.username == $page.params.username}
-    <h1 class="text-2xl font-bold mt-8 mb-4 text-center">
+    <h1 class="text-2xl font-bold mb-4 text-center">
       edit profile
     </h1>
     <div>

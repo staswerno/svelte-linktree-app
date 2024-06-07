@@ -17,14 +17,15 @@
 {#if isEditRoute || isBioRoute}
 <!-- TODO: fix sign out button -->
 <!-- TODO: style this navbar :/  -->
-<nav class="text-center w-full max-w-xl mx-auto items-center m-8">
+<nav class="text-center w-full max-w-xl mx-auto items-center my-6">
     <!-- <div class="w-1/4 items-start"></div> -->
     <!-- <div class="shrink-0 w-1/2"> -->
-        <ul class="flex flex-row justify-around">
+        <SignOutButton classes={"absolute right-6 top-6 btn-outline"}/>
+        <ul class="flex flex-row justify-center">
             <a 
                 href="/{$userData?.username}"
                 >
-                    <button class="btn btn-neutral w-20">
+                    <button class="btn btn-neutral w-16 xs:w-20 mx-3 xs:mx-6">
                         view
                     </button>
 
@@ -33,7 +34,7 @@
                 href="/{$userData?.username}/edit"
                 on:click={() => {userClicked.set(true); progress.set(0.5);}}>
                     <button 
-                        class="btn w-20"
+                        class="btn w-16 xs:w-20 mx-3 xs:mx-6"
                         class:btn-primary={isEditRoute}
                         class:btn-neutral={!isEditRoute}
                         >
@@ -44,7 +45,7 @@
                 href="/{$userData?.username}/bio"
                 on:click={() => {userClicked.set(true); progress.set(1);}}>
                     <button
-                        class="btn w-20"
+                        class="btn w-16 xs:w-20 mx-3 xs:mx-6"
                         class:btn-primary={isBioRoute}
                         class:btn-neutral={!isBioRoute}
                         >
@@ -54,7 +55,7 @@
         </ul>
     <!-- </div> -->
     <!-- <div class="w-1/4 justify-items-end">
-        <SignOutButton classes={""}/>
+        
     </div> -->
 </nav>
 {/if}
