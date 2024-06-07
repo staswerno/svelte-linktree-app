@@ -17,10 +17,10 @@
 {#if isEditRoute || isBioRoute}
 <!-- TODO: fix sign out button -->
 <!-- TODO: style this navbar :/  -->
-<nav class="flex items-center w-full">
-    <div class="w-6/12 items-start"><p>TODO: DELETE ME</p></div>
-    <div class="shrink-0">
-        <ul class="flex flex-col md:flex-row justify-around">
+<nav class="text-center w-full max-w-xl mx-auto items-center m-8">
+    <!-- <div class="w-1/4 items-start"></div> -->
+    <!-- <div class="shrink-0 w-1/2"> -->
+        <ul class="flex flex-row justify-around">
             <a 
                 href="/{$userData?.username}"
                 >
@@ -31,7 +31,6 @@
             </a>
             <a
                 href="/{$userData?.username}/edit"
-                class="py-3 md:py-0"
                 on:click={() => {userClicked.set(true); progress.set(0.5);}}>
                     <button 
                         class="btn w-20"
@@ -53,10 +52,10 @@
                     </button>
             </a>
         </ul>
-    </div>
-    <div class="w-6/12 justify-items-end">
+    <!-- </div> -->
+    <!-- <div class="w-1/4 justify-items-end">
         <SignOutButton classes={""}/>
-    </div>
+    </div> -->
 </nav>
 {/if}
 <main class="text-center w-full max-w-xl mx-auto items-center">
