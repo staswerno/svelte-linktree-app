@@ -3,6 +3,7 @@
     import { signOut } from "firebase/auth";
     import { goto } from "$app/navigation";
   
+    // set progress bar to 0
     async function signOutSSR() {
         const res = await fetch("/api/signin", { method: "DELETE" });
         await signOut(auth);
