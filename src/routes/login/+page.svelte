@@ -39,7 +39,8 @@
   {#if !$userData?.username}
     <a class="btn w-60" href="/login/username" on:click={() => {userClicked.set(true); progress.set(0.5);}}>choose username</a>
   {:else}
-    <!-- TODO: fix button. not working... sometimes? -->
+    <!-- TODO: fix button. not working... sometimes? 
+        make conditional? -->
     <a class="btn w-60" href="/{$userData.username}/edit">edit profile</a>
   {/if}
   <SignOutButton classes={"w-60"}/>
