@@ -6,6 +6,9 @@
   import { auth, user, userData, loggedIn } from "$lib/firebase";
   import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
   import { progress, userClicked } from "$lib/stores/progress"
+  import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
+  import AuthCheck from "$lib/components/AuthCheck.svelte";
+  import Layout from "../+layout.svelte";
 
   async function signInWithGoogle() {
     const provider = new GoogleAuthProvider();
@@ -36,6 +39,7 @@
   {#if !$userData?.username}
     <a class="btn w-60" href="/login/username" on:click={() => {userClicked.set(true); progress.set(0.5);}}>choose username</a>
   {:else}
+    <!-- TODO: fix button. not working... sometimes? -->
     <a class="btn w-60" href="/{$userData.username}/edit">edit profile</a>
   {/if}
   <SignOutButton classes={"w-60"}/>
