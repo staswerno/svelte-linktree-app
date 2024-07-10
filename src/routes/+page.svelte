@@ -18,6 +18,7 @@
     <div class="w-full">
         <h1 class="text-7xl font-bold">linktasia</h1>
         <p class="py-6 text-2xl">a shareable home for all your favourite links</p>
+        <!-- TODO: fix button text jumping -->
         {#if $userData?.username}
             <a href="/{$userData.username}/edit" class="btn btn-primary mr-3 w-36">edit profile</a>
             <!-- TODO: add sign out button -->
