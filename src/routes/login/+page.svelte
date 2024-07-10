@@ -41,6 +41,7 @@
   {:else}
     <!-- TODO: fix button. not working... sometimes? 
         make conditional? -->
+    <!-- TODO: fix button changing when logged in -->
     <a class="btn w-60" href="/{$userData.username}/edit">edit profile</a>
   {/if}
   <SignOutButton classes={"w-60"}/>
