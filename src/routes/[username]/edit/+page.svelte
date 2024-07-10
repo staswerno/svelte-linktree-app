@@ -171,7 +171,7 @@
             type="submit"
             class="btn btn-sm mb-2 sm:mb-0">add link</button
             >
-            <div>
+            <div class="my-auto">
               {#if !titleIsValid || !urlIsValid}
                 <span class="font-bold text-xs text-primary-content ml-2">invalid </span>
                 {#if !titleIsValid && !urlIsValid}
