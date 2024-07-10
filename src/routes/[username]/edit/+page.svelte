@@ -118,35 +118,37 @@
     {#if showForm}
       <form
         on:submit|preventDefault={addLink}
-        class="bg-secondary p-6 w-full mx-auto rounded-xl mt-4"
+        class="bg-secondary p-6 w-full mx-auto rounded-xl mt-4 mb-12"
       >
-        <select
-          name="icon"
-          class="select select-sm"
-          bind:value={$formData.icon}
-        >
-          <!-- TODO: icons change order. use keyed each block? -->
-          {#each icons as icon}
-            <option value={icon.toLowerCase()}>{icon}</option>
-          {/each}
-        </select>
-        <input
-          name="title"
-          type="text"
-          placeholder="title"
-          class="input input-sm"
-          bind:value={$formData.title}
-        />
-        <!-- TODO: why is input highlighted after text added? -->
-        <input
-          name="url"
-          type="text"
-          placeholder="URL"
-          class="input input-sm"
-          bind:value={$formData.url}
-        />
+        <div class="flex justify-between flex-col sm:flex-row">
+          <select
+            name="icon"
+            class="select select-sm"
+            bind:value={$formData.icon}
+          >
+            <!-- TODO: icons change order. use keyed each block? -->
+            {#each icons as icon}
+              <option value={icon.toLowerCase()}>{icon}</option>
+            {/each}
+          </select>
+          <input
+            name="title"
+            type="text"
+            placeholder="title"
+            class="input input-sm my-2 sm:my-0"
+            bind:value={$formData.title}
+          />
+          <!-- TODO: why is input highlighted after text added? -->
+          <input
+            name="url"
+            type="text"
+            placeholder="URL"
+            class="input input-sm"
+            bind:value={$formData.url}
+          />
+      </div>
         <!-- TODO: style this better -->
-        <div class="my-4">
+        <!-- <div class="my-4 text-left">
           {#if !titleIsValid || !urlIsValid}
             <span class="font-bold text-xs text-primary-content">invalid </span>
             {#if !titleIsValid && !urlIsValid}
@@ -160,23 +162,41 @@
           {#if formIsValid}
             <span class="font-bold text-xs text-primary-content">nailed it!</span>
           {/if}
-        </div>
+        </div> -->
         <!-- TODO: style this better -->
-        <button
-          disabled={!formIsValid}
-          type="submit"
-          class="btn block">add a link</button
-        >
-
-        <button type="button" class="btn btn-xs my-4" on:click={cancelLink}>cancel</button>
+        <div class="flex justify-between mt-4 flex-col sm:flex-row">
+          <div class="flex flex-col sm:flex-row">
+            <button
+            disabled={!formIsValid}
+            type="submit"
+            class="btn btn-sm mb-2 sm:mb-0">add link</button
+            >
+            <div>
+              {#if !titleIsValid || !urlIsValid}
+                <span class="font-bold text-xs text-primary-content ml-2">invalid </span>
+                {#if !titleIsValid && !urlIsValid}
+                  <span class="font-bold text-xs text-primary-content">title & URL</span>
+                {:else if !titleIsValid}
+                  <span class="font-bold text-xs text-primary-content">title</span>
+                {:else if !urlIsValid}
+                  <span class="font-bold text-xs text-primary-content">URL</span>
+                {/if}
+              {/if}
+              {#if formIsValid}
+                <span class="font-bold text-xs text-primary-content ml-2">nailed it!</span>
+              {/if}
+            </div>
+          </div>
+          <button type="button" class="btn btn-sm btn-neutral mt-2 sm:mt-0" on:click={cancelLink}>cancel</button>
+        </div>
       </form>
       {:else}
-      <button
-        on:click={() => (showForm = true)}
-        class="btn btn-outline block mx-auto my-4"
-      >
-        add a link
-      </button>
+        <button
+          on:click={() => (showForm = true)}
+          class="btn btn-outline block mx-auto my-4"
+        >
+          add a link
+        </button>
     {/if}
   {/if}
 </main>
