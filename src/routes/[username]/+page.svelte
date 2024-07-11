@@ -20,6 +20,7 @@
       {data.username}
     </h1>
     <!-- TODO: link image if no user image -->
+    <!-- TODO: check enhanced:img resizing -->
     <enhanced:img
       src={data.photoURL ?? "/user.png"}
       alt="photoURL"
