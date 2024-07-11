@@ -19,13 +19,12 @@
     <h1 class="text-6xl text-primary underline my-6">
       {data.username}
     </h1>
-    <!-- TODO: fix CLS -->
+    <!-- TODO: link image if no user image -->
     <enhanced:img
       src={data.photoURL ?? "/user.png"}
       alt="photoURL"
       class="mx-auto w-64"
     />
-    <!-- width="256" -->
 
     <p class="text-xl my-8">{data.bio}</p>
     <ul class="list-none p-0 flex flex-col items-center mb-12">
@@ -36,9 +35,9 @@
       {/each}
     </ul>  
 
-    <style>
-      img {
-        width: auto;
-        height: 256px;
-      }
-    </style>
+<style>
+  img {
+    width: auto;
+    height: 256px;
+  }
+</style>
