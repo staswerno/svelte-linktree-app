@@ -21,6 +21,7 @@
     </h1>
     <!-- TODO: link image if no user image -->
     <!-- TODO: check enhanced:img resizing -->
+    <!-- TODO: fix stretching on small sizes -->
     <enhanced:img
       src={data.photoURL ?? "/user.png"}
       alt="photoURL"
