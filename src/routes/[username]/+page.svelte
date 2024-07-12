@@ -14,32 +14,32 @@
 </svelte:head>
   
   {#if $userData?.username == $page.params.username}
-    <a class="btn btn-outline btn-sm absolute right-6 top-6" href="/{$userData.username}/edit">back</a>
+    <a class="btn btn-outline btn-sm absolute right-3 top-3" href="/{$userData.username}/edit">back</a>
   {/if}
-    <h1 class="text-6xl text-primary underline my-6">
-      {data.username}
-    </h1>
-    <!-- TODO: link image if no user image -->
-    <!-- TODO: check enhanced:img resizing -->
-    <!-- TODO: fix stretching on small sizes -->
+  <h1 class="text-5xl sm:text-6xl text-primary underline mb-6 mt-16 sm:mt-6">
+    {data.username}
+  </h1>
+  <!-- TODO: link image if no user image -->
+  <div class="mx-6">
     <enhanced:img
       src={data.photoURL ?? "/user.png"}
       alt="photoURL"
-      class="mx-auto w-64"
+      class="mx-auto"
     />
+  </div>
 
-    <p class="text-xl my-8">{data.bio}</p>
-    <ul class="list-none p-0 flex flex-col items-center mb-12">
-      {#each data.links as item}
-        <li class="my-2 max-w-md w-full">
-          <UserLink {...item} />
-        </li>
-      {/each}
-    </ul>  
+  <p class="text-xl my-8">{data.bio}</p>
+  <ul class="list-none p-0 flex flex-col items-center mb-12 mx-3">
+    {#each data.links as item}
+      <li class="my-2 max-w-md w-full">
+        <UserLink {...item} />
+      </li>
+    {/each}
+  </ul>  
 
 <style>
   img {
     width: auto;
-    height: 256px;
+    max-height: 256px;
   }
 </style>
