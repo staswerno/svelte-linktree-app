@@ -84,6 +84,7 @@
       <p class="font-bold mb-1">profile link (click to copy)</p>
       <p class="mb-8 text-accent">http://localhost:5173/{$userData?.username}</p>
     </div>
+    <!-- TODO: add photo -->
     <a
       href="/login/photo">
         <button 
