@@ -16,7 +16,7 @@
   {#if $userData?.username == $page.params.username}
     <a class="btn btn-outline btn-sm absolute right-3 top-3" href="/{$userData.username}/edit">back</a>
   {/if}
-  <h1 class="text-5xl sm:text-6xl text-primary underline mb-6 mt-16 sm:mt-6">
+  <h1 class="text-5xl sm:text-6xl text-primary underline mb-6 mt-10 sm:mt-6">
     {data.username}
   </h1>
   <!-- TODO: link image if no user image -->
