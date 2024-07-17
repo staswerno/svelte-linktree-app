@@ -3,8 +3,8 @@
 
 import { getAuth } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
-// TODO: add FB_SERVICE_ACCOUNT later? Currently producing an error
-import { FB_CLIENT_EMAIL, FB_PRIVATE_KEY, FB_PROJECT_ID } from '$env/static/private'
+// TODO: remove FB_SERVICE_ACCOUNT if not needed after deploy
+import { FB_CLIENT_EMAIL, FB_PRIVATE_KEY, FB_PROJECT_ID, FB_SERVICE_ACCOUNT } from '$env/static/private'
 import pkg from 'firebase-admin';
 
 try {
