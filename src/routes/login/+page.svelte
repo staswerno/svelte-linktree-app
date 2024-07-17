@@ -40,7 +40,8 @@
     <a class="btn w-60" href="/login/username" on:click={() => {userClicked.set(true); progress.set(0.5);}}>choose username</a>
   {:else}
     <!-- TODO: fix button. not working... sometimes? 
-        make conditional? -->
+        is this because cookie expired?
+        IF SO: make sure no cookie = logged out? -->
     <!-- TODO: fix button changing when logged in -->
     <a class="btn w-60" href="/{$userData.username}/edit">edit profile</a>
   {/if}
