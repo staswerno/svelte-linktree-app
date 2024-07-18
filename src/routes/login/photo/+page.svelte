@@ -27,9 +27,6 @@
 
     <form class="max-w-screen-md w-full">
       <div class="form-control w-full max-w-xs my-3 sm:my-6 mx-auto text-center">
-        <!-- TODO: change to enhanced:img -->
-        <!-- TODO: fix CLS -->
-        <!-- TODO: check enhanced:img resizing -->
         <enhanced:img
           src={previewURL ?? $userData?.photoURL ?? "/user.png"}
           alt="photoURL"
