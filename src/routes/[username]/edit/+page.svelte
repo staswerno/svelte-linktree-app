@@ -82,9 +82,16 @@
     <div>
     <!-- TODO: click to copy -->
       <p class="font-bold mb-1">profile link (click to copy)</p>
-      <p class="mb-8 text-accent">http://localhost:5173/{$userData?.username}</p>
+      <p class="mb-9 text-accent">http://localhost:5173/{$userData?.username}</p>
     </div>
-    <!-- TODO: add photo -->
+
+    <!-- TODO: click to edit photo -->
+    <enhanced:img
+      src={$userData?.photoURL ?? "/user.png"}
+      alt="photoURL"
+      class="mx-auto w-auto h-auto xs:h-64 my-6"
+    />
+
     <a
       href="/login/photo">
         <button 
@@ -94,8 +101,8 @@
           change photo
         </button>
     </a>
-    <p class="border rounded-lg border-dashed my-4 p-4 max-w-64 mx-auto">
-      drag and drop links to reorder
+    <p class="rounded-md mt-4 p-2 max-w-64 mx-auto">
+      drag to reorder
     </p>    
     <!-- NOTE: if there are issues, re add
     let:index
@@ -147,24 +154,7 @@
             class="input input-sm"
             bind:value={$formData.url}
           />
-      </div>
-        <!-- TODO: style this better -->
-        <!-- <div class="my-4 text-left">
-          {#if !titleIsValid || !urlIsValid}
-            <span class="font-bold text-xs text-primary-content">invalid </span>
-            {#if !titleIsValid && !urlIsValid}
-              <span class="font-bold text-xs text-primary-content">title & URL</span>
-            {:else if !titleIsValid}
-              <span class="font-bold text-xs text-primary-content">title</span>
-            {:else if !urlIsValid}
-              <span class="font-bold text-xs text-primary-content">URL</span>
-            {/if}
-          {/if}
-          {#if formIsValid}
-            <span class="font-bold text-xs text-primary-content">nailed it!</span>
-          {/if}
-        </div> -->
-        <!-- TODO: style this better -->
+        </div>
         <div class="flex justify-between mt-4 flex-col sm:flex-row">
           <div class="flex flex-col sm:flex-row">
             <button
