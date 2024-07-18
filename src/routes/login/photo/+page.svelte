@@ -26,16 +26,14 @@
     <h1 class="card-title">upload a profile pic</h1>
 
     <form class="max-w-screen-md w-full">
-      <div class="form-control w-full max-w-xs my-6 mx-auto text-center">
+      <div class="form-control w-full max-w-xs my-3 sm:my-6 mx-auto text-center">
         <!-- TODO: change to enhanced:img -->
         <!-- TODO: fix CLS -->
         <!-- TODO: check enhanced:img resizing -->
-        <img
+        <enhanced:img
           src={previewURL ?? $userData?.photoURL ?? "/user.png"}
           alt="photoURL"
-          width="256"
-          height="256"
-          class="mx-auto mb-6"
+          class="mx-auto w-auto h-auto xs:h-36 sm:h-64 mb-6"
         />
         <label for="photoURL" class="label sr-only">
           pick a file
