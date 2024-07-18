@@ -37,10 +37,3 @@
       </li>
     {/each}
   </ul>  
-
-<style>
-  /* img {
-    width: auto;
-    height: 256px;
-  } */
-</style>
