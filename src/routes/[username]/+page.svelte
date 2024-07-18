@@ -20,11 +20,12 @@
     {data.username}
   </h1>
   <!-- TODO: link image if no user image -->
+  <!-- TODO: don't stretch image below 320 whilst maintaining CLS -->
   <div class="mx-6">
     <enhanced:img
       src={data.photoURL ?? "/user.png"}
       alt="photoURL"
-      class="mx-auto"
+      class="mx-auto w-auto h-64"
     />
   </div>
 
@@ -38,8 +39,8 @@
   </ul>  
 
 <style>
-  img {
+  /* img {
     width: auto;
-    max-height: 256px;
-  }
+    height: 256px;
+  } */
 </style>

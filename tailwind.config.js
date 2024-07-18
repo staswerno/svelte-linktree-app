@@ -5,7 +5,7 @@ export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
 		screens: {
-			'xs': '350px',
+			'xs': '320px',
 			...defaultTheme.screens,
 		  },
 	},
