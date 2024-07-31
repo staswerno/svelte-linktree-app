@@ -37,8 +37,10 @@
   }
 </script>
 
-<!-- TODO: How to make this wait? -->
-<!-- ...add logic to the sign in button? -->
+<!-- TODO: How to make this wait?
+     ...add logic to the sign in button?
+     can we make this smoother? for eg 
+     not allow you to other pages in first place? -->
 {#if $user && $loggedIn && !uid}
   <p class="text-center mb-3">&gt; your session has expired, please sign out &lt;</p>
   <SignOutButton classes={"w-60"}/>
