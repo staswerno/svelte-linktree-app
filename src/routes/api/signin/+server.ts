@@ -7,7 +7,7 @@ import type { RequestHandler } from "./$types";
 export const POST: RequestHandler = async ({ request, cookies }) => {
 	const { idToken } = await request.json();
 
-	const expiresIn = 60 * 60 * 24 * 5 * 1000; // 5 days
+	const expiresIn = 60 * 60 * 24 * 5; // 5 days
 
 	const decodedIdToken = await adminAuth.verifyIdToken(idToken);
 
@@ -20,14 +20,14 @@ export const POST: RequestHandler = async ({ request, cookies }) => {
 			path: "/",
 		};
 
-		cookies.set("__session", cookie, options);
+		cookies.set("__scoobysession", cookie, options);
 		return json({ status: "signedIn" });
 	} else {
-		throw error(401, "Recent sign in required!");
+		throw error(401, "recent sign in required!");
 	}
 };
 
 export const DELETE: RequestHandler = async ({ cookies }) => {
-	cookies.delete("__session", { path: "/" });
+	cookies.delete("__scoobysession", { path: "/" });
 	return json({ status: "signedOut" });
 };

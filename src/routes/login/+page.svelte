@@ -10,6 +10,10 @@
   import AuthCheck from "$lib/components/AuthCheck.svelte";
   import Layout from "../+layout.svelte";
 
+  export let data;
+
+  const uid = data.uid;
+
   async function signInWithGoogle() {
     const provider = new GoogleAuthProvider();
     const credential = await signInWithPopup(auth, provider);
@@ -33,7 +37,12 @@
   }
 </script>
 
-{#if $user && $loggedIn}
+<!-- TODO: How to make this wait? -->
+<!-- ...add logic to the sign in button? -->
+{#if $user && $loggedIn && !uid}
+  <p class="text-center mb-3">&gt; your session has expired, please sign out &lt;</p>
+  <SignOutButton classes={"w-60"}/>
+{:else if $user && $loggedIn}
   <h1 class="card-title">welcome, {$user.displayName?.toLowerCase()}</h1>
   <p class="text-center mb-3">&gt; you are logged in &lt;</p>
   {#if !$userData?.username}
