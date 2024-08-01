@@ -14,11 +14,14 @@
 
   export let data;
 
+  // TODO: keep an eye if this is working
+  // TODO: test deleting session cookie
   let uid = data.uid;
 
   onMount(() => {
     if (browser) {
       const checkCookie = setInterval(() => {
+        // TODO: remove these if necessary
         // uid = document.cookie.replace(/(?:(?:^|.*;\s*)uid\s*\=\s*([^;]*).*$)|^.*$/, "$1");
         // uid = data.uid;
         if (uid) {
