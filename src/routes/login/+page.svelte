@@ -6,30 +6,10 @@
   import { auth, user, userData, loggedIn } from "$lib/firebase";
   import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
   import { progress, userClicked } from "$lib/stores/progress"
-  import { onMount } from 'svelte';
-  import { browser } from '$app/environment';
-  import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
-  import AuthCheck from "$lib/components/AuthCheck.svelte";
-  import Layout from "../+layout.svelte";
 
   export let data;
 
-  // TODO: keep an eye if this is working
-  // TODO: test deleting session cookie
   let uid = data.uid;
-
-  onMount(() => {
-    if (browser) {
-      const checkCookie = setInterval(() => {
-        // TODO: remove these if necessary
-        // uid = document.cookie.replace(/(?:(?:^|.*;\s*)uid\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-        // uid = data.uid;
-        if (uid) {
-          clearInterval(checkCookie);
-        }
-      }, 100); // Check every 100ms
-    }
-  });
 
   async function signInWithGoogle() {
     const provider = new GoogleAuthProvider();
