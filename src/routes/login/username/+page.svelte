@@ -87,6 +87,7 @@
                     input username to check availability
                 {:else if !isValid} 
                     <!-- TODO: be more descriptive without breaking layout -->
+                    <!-- ... use tooltip? -->
                     username is invalid
                 {:else if loading}
                     checking availability of <span class="font-bold underline">{username}</span>
