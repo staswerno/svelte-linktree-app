@@ -1,6 +1,8 @@
 <script lang="ts">
     import { user, userData, loggedIn } from "$lib/firebase";
-    let loadingBalls = ['md', 'lg', 'md'];
+    import { writable, type Writable } from 'svelte/store';
+
+    const loadingBalls: Writable<string[]> = writable(['md', 'lg', 'md']);
     let isLoading = true; 
 
     // TODO: fix loading for logged out users
@@ -12,14 +14,19 @@
             isLoading = false;
         }
     }
+
+    // Ensure the store is properly initialized
+    $: {
+        if ($loadingBalls.length === 0) {
+            loadingBalls.set(['md', 'lg', 'md']);
+        }
+    }
 </script>
 
 {#if $loggedIn && isLoading}
     <div class="flex h-screen justify-center items-center text-center">
-        <!-- CLEANUP: is the key for this each block necessary? -->
-        {#each loadingBalls as size, i (i)}
-            <!-- TODO: why is lg ball sometimes rendering as md? -->
-            <span class={`loading loading-ball loading-${size}`}></span>
+        {#each $loadingBalls as size, i (size + i)}
+            <span class={`loading loading-ball loading-${size} mx-1`}></span>
         {/each}
     </div>
 {:else}
