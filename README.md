@@ -1,3 +1,3 @@
 ### to run
-npm install
-npm run dev
+```npm install```<br>
+```npm run dev```
