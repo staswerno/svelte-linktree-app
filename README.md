@@ -1,1 +1,3 @@
-# TODO: update me 😭
+### to run
+npm install
+npm run dev
