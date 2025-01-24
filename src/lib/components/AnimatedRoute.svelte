@@ -1,6 +1,6 @@
 <script>
-        import { fly } from "svelte/transition";
-        import { page } from "$app/stores";
+    import { fly } from "svelte/transition";
+    import { page } from "$app/stores";
 </script>
 
 {#key $page.url}
@@ -8,3 +8,6 @@
         <slot />
     </div>
 {/key}
+
+<!-- formatting checked -->
+ 
