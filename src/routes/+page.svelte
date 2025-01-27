@@ -12,6 +12,8 @@
 <!-- TODO: double check formatting on all pages -->
 <!-- TODO: double check spacing on all elements -->
 <!-- TODO: remove unused imports -->
+<!-- TODO: remove "formatting checked" comments -->
+
 <div class="hero bg-base-200">
     <div class="hero-content text-center">
     <div class="w-full">
