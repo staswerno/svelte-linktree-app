@@ -81,7 +81,7 @@
     </h1>
     <div>
     <!-- TODO: click to copy -->
-      <p class="font-bold mb-1">profile link (click to copy)</p>
+      <p class="font-bold mb-1">profile link</p>
       <p class="mb-9 text-accent">http://localhost:5173/{$userData?.username}</p>
     </div>
 
