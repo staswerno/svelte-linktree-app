@@ -27,6 +27,6 @@
         <button class="btn btn-primary my-5">update bio</button>
     </form>
     <!-- TODO: test status code -->
-    <p>Status Code: {$page.status}</p>
-    <p class="font-bold">{$page.form?.problem ?? ""}</p>
+    <!-- <p>Status Code: {$page.status}</p>
+    <p class="font-bold">{$page.form?.problem ?? ""}</p> -->
 </main>
