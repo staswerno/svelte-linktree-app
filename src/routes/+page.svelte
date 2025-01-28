@@ -13,6 +13,7 @@
 <!-- TODO: double check spacing on all elements -->
 <!-- TODO: remove unused imports -->
 <!-- TODO: remove "formatting checked" comments -->
+<!-- TODO: fix unresponsive links when cookies expired -->
 
 <div class="hero bg-base-200">
     <div class="hero-content text-center">
