@@ -11,3 +11,5 @@ vite.config.ts.timestamp-*
 src/lib/firebase.ts
 service-account.json
 .prettierrc
+.netlify
+.vercel
