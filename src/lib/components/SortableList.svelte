@@ -27,18 +27,18 @@
         e.dataTransfer?.setData("source", dragged?.index.toString());
     }
 
-  function onDragOver(e: DragEvent) {
+    function onDragOver(e: DragEvent) {
     // @ts-ignore
         const dragged = getDraggedParent(e.target);
         isOver = dragged?.id ?? false;
     }
 
-  function onDragLeave(e: DragEvent) {
+    function onDragLeave(e: DragEvent) {
         const dragged = getDraggedParent(e.target);
         isOver === dragged.id && (isOver = false);
     }
 
-  function onDrop(e: DragEvent) {
+    function onDrop(e: DragEvent) {
         isOver = false;
         const dragged = getDraggedParent(e.target);
         reorder({
@@ -66,9 +66,6 @@
     };
 </script>
 
-
-
-
 {#if list?.length}
     <ul class="list-none p-0 flex flex-col items-center">
         {#each list as item, index (item.id)}
@@ -95,11 +92,14 @@
         {/each}
     </ul>
 {:else}
-  <p class="text-center my-12 text-lg font-bold">no items</p>
+    <p class="text-center my-12 text-lg font-bold">no items</p>
 {/if}
 
 <style>
     .over {
-      @apply border-solid border-neutral-content rounded-lg ;
+        @apply border-solid border-neutral-content rounded-lg ;
     }
   </style>
+
+<!-- formatting checked -->
+ 
