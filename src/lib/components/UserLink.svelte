@@ -8,3 +8,6 @@
     <img src={`/${icon}.png`} alt={icon} width="32" height="32" class="w-8" />
     <span class="text-lg text-accent-content font-bold">{title}</span>
 </a>
+
+<!-- formatting checked -->
+ 

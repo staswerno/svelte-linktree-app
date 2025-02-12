@@ -27,3 +27,5 @@ export const adminDB = getFirestore();
 export const adminAuth = getAuth();
 
 // TO DO: look into firebase emulator suite for testing and debugging?
+
+// formatting checked
