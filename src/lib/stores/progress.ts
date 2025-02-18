@@ -8,3 +8,5 @@ export const progress = tweened(0, {
 });
 
 export const userClicked = writable(false);
+
+// formatting checked
