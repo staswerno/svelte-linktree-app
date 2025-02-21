@@ -30,3 +30,5 @@
     <!-- <p>Status Code: {$page.status}</p>
     <p class="font-bold">{$page.form?.problem ?? ""}</p> -->
 </main>
+
+<!-- formatting checked -->
