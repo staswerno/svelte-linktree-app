@@ -16,3 +16,5 @@ export const load = (async ({ locals, params }) => {
 		throw error(401, "that username does not belong to you");
 	}
 }) satisfies PageServerLoad;
+
+// formatting checked
