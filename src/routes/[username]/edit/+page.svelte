@@ -47,7 +47,7 @@
 
     await updateDoc(userRef, {
       links: arrayUnion({
-        ...$formData,
+          ...$formData,
         id: Date.now().toString(),
       }),
     });
@@ -79,8 +79,8 @@
     <h1 class="text-2xl font-bold mb-4 text-center">
       edit profile
     </h1>
-    <div>
     <!-- TODO: click to copy -->
+    <div>
       <p class="font-bold mb-1">profile link</p>
       <p class="mb-9 text-accent">http://localhost:5173/{$userData?.username}</p>
     </div>
@@ -158,13 +158,13 @@
         <div class="flex justify-between mt-4 flex-col sm:flex-row">
           <div class="flex flex-col sm:flex-row">
             <button
-            disabled={!formIsValid}
-            type="submit"
-            class="btn btn-sm mb-2 sm:mb-0">add link</button
+              disabled={!formIsValid}
+              type="submit"
+              class="btn btn-sm mb-2 sm:mb-0">add link</button
             >
             <div class="my-auto">
               {#if !titleIsValid || !urlIsValid}
-                <span class="font-bold text-xs text-primary-content ml-2">invalid </span>
+                  <span class="font-bold text-xs text-primary-content ml-2">invalid </span>
                 {#if !titleIsValid && !urlIsValid}
                   <span class="font-bold text-xs text-primary-content">title & URL</span>
                 {:else if !titleIsValid}
@@ -191,3 +191,5 @@
     {/if}
   {/if}
 </main>
+
+<!-- formatting checked -->
