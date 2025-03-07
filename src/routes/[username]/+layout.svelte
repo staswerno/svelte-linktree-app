@@ -51,6 +51,10 @@
         </ul>
 </nav>
 {/if}
+
 <main class="text-center w-full max-w-xl mx-auto items-center">
     <slot />
 </main>
+
+<!-- formatting checked -->
+ 
