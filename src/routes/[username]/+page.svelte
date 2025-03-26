@@ -1,16 +1,15 @@
 <script lang="ts">
     import UserLink from '$lib/components/UserLink.svelte';
-    import type { PageData } from './$types';
     import { page } from "$app/stores";
     import { userData } from "$lib/firebase";
-
+    import type { PageData } from './$types';
     
     export let data: PageData;
 </script>
 
 <svelte:head>
     <title>{data.username} links</title>
-    <meta name="description" content={data.bio} />
+    <meta name="description" content={data.bio}/>
 </svelte:head>
   
   {#if $userData?.username == $page.params.username}
@@ -36,4 +35,6 @@
         <UserLink {...item} />
       </li>
     {/each}
-  </ul>  
+  </ul>
+
+  <!-- formatting checked -->
