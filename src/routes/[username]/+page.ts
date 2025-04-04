@@ -36,4 +36,4 @@ export const load = (async ({ params }) => {
     };
 }) satisfies PageLoad;
 
-// 
+// formatting checked
